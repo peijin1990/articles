@@ -4,7 +4,9 @@
 
 ### 安装
 1.全局安装 ```npm install gulp -g```
+
 2.本地安装 ```npm install gulp --save-dev```
+
 3.插件安装 ```npm install gulp-uglify --save-dev```
 > gulp-uglify是gulp中的js压缩插件，[gulp插件](https://gulpjs.com/plugins/)的使用方式类似于sublime text插件，需要自己去选择适合的插件。
 > 一般情况下，我们需要安装多个插件，以空格分开。比如
@@ -13,41 +15,77 @@
 ### 简单的例子
 ```
 var gulp = require("gulp");
-//uglify是js压缩插件
+var autoprefixer = require("gulp-autoprefixer");
+var htmlmin = require("gulp-htmlmin");
 var uglify = require("gulp-uglify");
-//concat是合并文件插件，可以是js/css，并且给新合并的插件重命名
-var concat = require("gulp-concat");
-//rename重命名插件
-var rename = require("gulp-rename");
-//clean-css是css压缩插件
-var cleanCss = require("gulp-clean-css");
-//smushit是img压缩插件
 var smushit = require("gulp-smushit");
+var rev = require("gulp-rev");
+var revCollector = require("gulp-rev-collector");
+var cleanCss = require("gulp-clean-css");
 
-gulp.task("miniJs",function(){
-    return gulp.src("js/*.js")
-               .pipe(concat("main.js"))
-               .pipe(gulp.dest("dist/js"))
-               .pipe(rename(main.min.js))
-               .pipe(uglify())
-               .pipe(gulp.dest("dist/js"));
+var task={
+  "js":"src/js/*",
+  "css":"src/css/*",
+  "img":"src/img/*",
+  "html":"src/html/*",
+  "rev":"rev/**/*.json"
+};
 
-    });
+var options={
+  //清除HTML注释
+  removeComments:true,
+  //压缩HTML
+  collapseWhitespace:true,
+  //省略布尔属性的值<input checked="true" /> ==> <input />
+  collapseBooleanAttributes:true,
+  //删除所有空格作属性值 <input id="" /> ==> <input />
+  removeEmptyAttributes:true,
+  //删除<script>的type="text/javascript"
+  removeScriptTypeAttributes:true,
+  //删除<style>和<link>的type="text/css"
+  removeStyleLinkTypeAttributes:true,
+  //压缩页面JS
+  minifyJS:true,
+  //压缩页面CSS
+  minifyCSS:true
+};
 
-gulp.task("minCss",function(){
-    return gulp.src("css/*.css")
-               .pipe(concat("main.css"))
-               .pipe(gulp.dest("dist/css"))
-               .pipe(rename("main.min.css"))
-               .pipe(cleanCss({compatibility:"ie8"}))
-               .pipe(gulp.dest("dist/css"));
-    });
+//压缩js
+gulp.task("scripts",function(){
+  return gulp.src(task.js)
+             .pipe(rev())
+             .pipe(gulp.dest("dist/js"))
+             .pipe(rev.manifest())
+             .pipe(gulp.dest("rev/js"))
+});
 
+//压缩css
 gulp.task("miniCss",function(){
-    return gulp.src("img/*")
-               .pipe(smushit())
-               .pipe(gulp.dest("dist/img"));
-    });
+  return gulp.src(task.css)
+             .pipe(autoprefixer({
+               browsers:['last 20 versions','Android>=4.0'],
+               cascade:true,
+               remove:true
+             }))
+             .pipe(cleanCss())
+             .pipe(rev())
+             .pipe(gulp.dest("dist/css"))
+             .pipe(rev.manifest())
+             .pipe(gulp.dest("rev/css"));
+});
 
-gulp.task("default",["miniJs","miniCss","miniImg"]);
+//压缩img
+gulp.task("miniImg",function(){
+  return gulp.src(task.img)
+             .pipe(smushit())
+             .pipe(gulp.dest("dist/img"));
+})
+
+gulp.task("version",["scripts","miniCss","miniImg"],function(){
+  return gulp.src([task.rev,task.html])
+             .pipe(revCollector())
+             .pipe(htmlmin(options))
+             .pipe(rev())
+             .pipe(gulp.dest("dist/html"));
+});
 ```
