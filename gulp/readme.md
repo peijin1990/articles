@@ -27,7 +27,7 @@ var task={
   "js":"src/js/*",
   "css":"src/css/*",
   "img":"src/img/*",
-  "html":"src/html/*",
+  "html":["src/html/*","!src/html/index.html"],
   "rev":"rev/**/*.json"
 };
 
@@ -56,7 +56,7 @@ gulp.task("scripts",function(){
              .pipe(rev())
              .pipe(gulp.dest("dist/js"))
              .pipe(rev.manifest())
-             .pipe(gulp.dest("rev/js"))
+             .pipe(gulp.dest("rev/js"));
 });
 
 //压缩css
