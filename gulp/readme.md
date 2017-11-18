@@ -27,7 +27,7 @@ var task={
   "js":"src/js/*",
   "css":"src/css/*",
   "img":"src/img/*",
-  "html":["src/html/*","!src/html/index.html"],
+  "html":"src/html/*",
   "rev":"rev/**/*.json"
 };
 
