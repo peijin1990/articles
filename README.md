@@ -29,7 +29,7 @@
 - [~~如何用CSS进行网页布局~~](http://www.imooc.com/learn/57)
 - [网页简单布局之结构与表现原则](http://www.imooc.com/learn/20)
 - [~~JavaScript入门篇~~](http://www.imooc.com/learn/36)
-- [JavaScript进阶篇](http://www.imooc.com/learn/10)
+- [~~JavaScript进阶篇~~](http://www.imooc.com/learn/10)
 - [JavaScript深入浅出](http://www.imooc.com/learn/277)
 - [AngularJS实战](http://www.imooc.com/learn/156)
 - [进击Node.js基础（一）](http://www.imooc.com/learn/348)
