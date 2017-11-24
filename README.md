@@ -44,7 +44,7 @@
 - [Ajax全接触](http://www.imooc.com/learn/250)
 - [HTML5之元素与标签结构](http://www.imooc.com/learn/24)
 - [~~前端开发工具技巧介绍——Sublime篇~~](http://www.imooc.com/learn/40)
-> windows系统下的sublime操作技巧
+> windows系统下的sublime操作技巧，可以回看
 - [~~快乐的sublime编辑器~~](https://www.imooc.com/video/6488)
 > 苹果系统下的sublime操作技巧（不适合）
 - [jQuery基础（一）——样式篇](http://www.imooc.com/learn/418)
