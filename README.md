@@ -22,14 +22,21 @@
 #### 前端开发——基础
 
 - [~~HTML+CSS基础课程~~](http://www.imooc.com/learn/9)
+> 基础
 - [~~前端开发工具技巧介绍--DW篇~~](http://www.imooc.com/learn/39)
+> 入门时的编程软件，后期基本舍弃
 - [~~前端工程师必备的PS技能——切图篇~~](http://www.imooc.com/learn/506)
+> 主要介绍了手动切图和自动切图，但是个人认为不好用，推荐极客学院的ps视频
 - [~~玩转Bootstrap(基础)~~](http://www.imooc.com/learn/141)
 - [~~玩转Bootstrap(JS插件篇)~~](http://www.imooc.com/learn/262)
 - [~~如何用CSS进行网页布局~~](http://www.imooc.com/learn/57)
+> 简单介绍1列布局，2列布局，3列布局以及混合布局
 - [~~网页简单布局之结构与表现原则~~](http://www.imooc.com/learn/20)
+> 主要介绍不要太多嵌套结构，最好通过表现css实现
 - [~~JavaScript入门篇~~](http://www.imooc.com/learn/36)
+> 简单的入门
 - [~~JavaScript进阶篇~~](http://www.imooc.com/learn/10)
+> 基础都有所涉猎，但是都讲得不深
 - [JavaScript深入浅出](http://www.imooc.com/learn/277)
 - [AngularJS实战](http://www.imooc.com/learn/156)
 - [进击Node.js基础（一）](http://www.imooc.com/learn/348)
