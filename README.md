@@ -37,9 +37,13 @@
 - [Ajax全接触](http://www.imooc.com/learn/250)
 - [HTML5之元素与标签结构](http://www.imooc.com/learn/24)
 - [~~前端开发工具技巧介绍——Sublime篇~~](http://www.imooc.com/learn/40)
+> windows系统下的sublime操作技巧
+- [~~快乐的sublime编辑器~~](https://www.imooc.com/video/6488)
+> 苹果系统下的sublime操作技巧（不适合）
 - [jQuery基础（一）——样式篇](http://www.imooc.com/learn/418)
 - [响应式布局](http://www.imooc.com/learn/41)
 - [~~版本控制入门——搬进Github~~](http://www.imooc.com/learn/390)
+> 主要介绍github的团队流程，对于个人开发者只需看前3节
 - [React入门](http://www.imooc.com/learn/504)
 - [Hello，移动WEB](http://www.imooc.com/learn/494)
 - [JS动画效果](http://www.imooc.com/learn/167)
