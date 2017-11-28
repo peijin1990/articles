@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js透明度动画</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		#div1{
+			width:200px;
+			height:200px;
+			background-color:red;
+			filter:alpha(opacity=30);
+			opacity:0.3;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var div1=document.getElementById("div1");
+			div1.onmouseover=function(){
+				startMove(100);
+			};
+			div1.onmouseout=function(){
+				startMove(30);
+			};
+		};
+		var timer=null;
+		var alpha=30;
+		function startMove(target){
+			clearInterval(timer);
+			var div1=document.getElementById("div1");
+			if(alpha>target){
+				speed=-10;
+			}else{
+				speed=10;
+			}
+			timer=setInterval(function(){
+				if(alpha==target){
+					clearInterval(timer);
+				}
+				alpha+=speed;
+				div1.style.filter="alpha(opacity="+alpha+")";
+				div1.style.opacity=alpha/100;
+			},30);
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>
