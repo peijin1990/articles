@@ -23,3 +23,8 @@
 
 #### 第3章 类型、值和变量
 
+javaScript数据类型分为原始类型和对象类型
+- 原始类型：数字，字符串，布尔值，null，undefined
+- 每个构造
+- 数组（Array）类，函数（Function）类，正则（RegExp）类，日期（Date）类，错误（Error）类
+- javascript对象
